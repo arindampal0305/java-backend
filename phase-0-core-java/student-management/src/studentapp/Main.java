@@ -37,8 +37,13 @@ public class Main {
                     System.out.println("Enter Marks:");
                     double marks = scanner.nextDouble();
 
-                    service.addStudent(new Student(id,name,marks));
-                    System.out.println("Student added successfully!");
+                    boolean added = service.addStudent(new Student(id,name,marks));
+                    if(added){
+                        System.out.println("Student added successfully!");
+                    }
+                    else{
+                        System.out.println("Student with id "+ id + " already exists!");
+                    }
                 }
                 case 2 -> {
                     service.getAllStudents().forEach(System.out::println);

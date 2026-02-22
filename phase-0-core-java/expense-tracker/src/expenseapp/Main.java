@@ -38,8 +38,10 @@ public class Main {
                     System.out.println("Enter Date (YYYY-MM-DD):");
                     String dateInput = sc.next();
                     Expense expenseItem = new Expense(id,category,amount,java.time.LocalDate.parse(dateInput));
-                    expense.addExpense(expenseItem);
-                    System.out.println("Expense added successfully!");
+                    boolean flag = expense.addExpense(expenseItem);
+                    if(flag) System.out.println("Expense added successfully!");
+                    else System.out.println("Expense with id "+id+" already Exists!");
+
                 }
                 case 2 ->{
                     expense.getAllExpense().forEach(System.out::println);

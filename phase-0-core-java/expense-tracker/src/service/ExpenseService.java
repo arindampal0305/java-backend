@@ -7,8 +7,12 @@ import java.util.ArrayList;
 public class ExpenseService {
     List<Expense> expense = new ArrayList<>();
 
-    public void addExpense(Expense e){
+    public boolean addExpense(Expense e){
+        if (isIdExists(e.getId())){
+            return false;
+        }
         expense.add(e);
+        return true;
     }
     public void removeByExpenseId(int id){
         expense.removeIf(expense -> expense.getId()==id);
@@ -33,6 +37,9 @@ public class ExpenseService {
     }
     public List<Expense> sortByAmount(){
         return expense.stream().sorted((e1,e2)-> Double.compare(e1.getAmount(), e2.getAmount())).toList();
+    }
+    private boolean isIdExists(int id){
+        return expense.stream().anyMatch(student -> student.getId() == id);
     }
 
 }

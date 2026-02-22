@@ -10,3 +10,4 @@ This phase focuses on strengthening Java fundamentals required for backend devel
 
 ## Projects
 - Student Management System
+- Expense Tracking System

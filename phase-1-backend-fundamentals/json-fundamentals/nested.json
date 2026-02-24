@@ -1,0 +1,19 @@
+{
+  "userId": 101,
+  "name": "Arindam Pal",
+  "address": {
+    "city": "Bokaro",
+    "state": "Jharkhand",
+    "pin": 827006
+  },
+  "skills": [
+    {
+      "name": "Java",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Backend",
+      "level": "Beginner"
+    }
+  ]
+}
